@@ -1,7 +1,9 @@
 package com.alfili.tomfpp;
 
 import com.alfili.tomfpp.models.FreeProxyCz;
+import com.alfili.tomfpp.models.FreeProxyWorld;
 import javafx.fxml.FXML;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 
 import java.awt.*;
@@ -20,8 +22,10 @@ public class HelloController {
     protected void onParseButtonClick() {
 
         ArrayList<String> freeProxyCzList = new FreeProxyCz().startParsing();
+        ArrayList<String> freeProxyWorldList = new FreeProxyWorld().startParsing();
 
         this.parsingResultList.addAll(freeProxyCzList);
+        this.parsingResultList.addAll(freeProxyWorldList);
 
         for(String link : this.parsingResultList) {
             resultTextArea.appendText(link);
