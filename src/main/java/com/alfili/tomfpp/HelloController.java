@@ -50,8 +50,6 @@ public class HelloController {
             }
 
             checkResultForSave();
-
-            throw new Exception("lol");
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Что-то пошло не так");
