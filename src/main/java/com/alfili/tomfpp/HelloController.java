@@ -103,7 +103,15 @@ public class HelloController {
             }
 
         } catch (Exception e) {
-            //
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Что-то пошло не так");
+            alert.setHeaderText("Что-то пошло не так");
+            alert.setContentText(e.getMessage());
+            alert.showAndWait().ifPresent(rs -> {
+                if (rs == ButtonType.OK) {
+                    System.out.println("Pressed OK.");
+                }
+            });
         }
 
     }
